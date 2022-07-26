@@ -21,13 +21,18 @@ Imagine you have a model called `Product`, and each product has multiple `Produc
 ```php
 use MMedia\LaravelCollaborativeFiltering\HasCollaborativeFiltering;
 
-class User extends Model {
+class Product extends Model {
 
     use HasCollaborativeFiltering;
 
     public function related()
     {
         return $this->hasManyRelatedThrough(ProductCategory::class, 'category_id');
+    }
+
+    public function relatedThroughLikes()
+    {
+        return $this->hasManyRelatedThrough(ProductLikes::class, 'user_id');
     }
 
 }
