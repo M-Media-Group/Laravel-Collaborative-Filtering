@@ -97,6 +97,14 @@ class HasManyRelatedThrough extends HasManyThrough
 
     private function currentTableColumns()
     {
-        return $this->farParent->getConnection()->getSchemaBuilder()->getColumnListing($this->farParent->getTable());
+        $table = $this->farParent->getTable();
+        $columns = $this->getConnection()->getSchemaBuilder()->getColumnListing($table);
+
+        // Convert each $column to fullyQualified name
+        $columns = array_map(function ($column) use ($table) {
+            return $table . "." . $column;
+        }, $columns);
+
+        return $columns;
     }
 }
