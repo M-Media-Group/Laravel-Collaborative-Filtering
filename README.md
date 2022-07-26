@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/mmedia/laravel-collaborative-filtering.svg?style=flat-square)](https://packagist.org/packages/mmedia/laravel-collaborative-filtering)
 ![GitHub Actions](https://github.com/mmedia/laravel-collaborative-filtering/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Get related models for the current model. Commonly used for "similar products" sections.
 
 ## Installation
 
